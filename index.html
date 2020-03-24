@@ -47,17 +47,33 @@
     </section>
 
     <section>
-        <div class="container">
-            <div class="columns is-multiline">
+        <div class="container is-fluid">
+
+            <div class="columns is-multiline singola_sezione">
                 <div class="column is-full">
                     <p class="title is-4">Totale Casi</p>
                 </div>
                 <div class="column is-half">
                     <p class="title is-5">Andamento Cumulativo</p>
-                    <canvas id="myChart"></canvas>
+                    <canvas id="chart-totale_casi_cumulativo"></canvas>
                 </div>
                 <div class="column is-half">
                     <p class="title is-5">Valori Singoli Giornalieri</p>
+                    <canvas id="chart-totale_casi_giornaliero"></canvas>
+                </div>
+            </div>
+
+            <div class="columns is-multiline singola_sezione">
+                <div class="column is-full">
+                    <p class="title is-4">Dimessi Guariti</p>
+                </div>
+                <div class="column is-half">
+                    <p class="title is-5">Andamento Cumulativo</p>
+                    <canvas id="chart-dimessi_guariti_cumulativo"></canvas>
+                </div>
+                <div class="column is-half">
+                    <p class="title is-5">Valori Singoli Giornalieri</p>
+                    <canvas id="chart-dimessi_guariti_giornaliero"></canvas>
                 </div>
             </div>
         </div>
