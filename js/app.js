@@ -1,15 +1,4 @@
-$(function(e){
-
-    // ricoverati_con_sintomi: 101
-    // terapia_intensiva: 26
-    // totale_ospedalizzati: 127
-    // isolamento_domiciliare: 94
-    // totale_attualmente_positivi: 221
-    // nuovi_attualmente_positivi: 221
-    // dimessi_guariti: 1
-    // deceduti: 7
-    // totale_casi: 229
-    // tamponi: 4324
+$(function (e) {
 
     //Impostazioni generiche per tutti i grafici
     var custom = {
