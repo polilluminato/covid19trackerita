@@ -17,7 +17,7 @@ La pagina è divisa a sezioni in cui vengono riportati i grafici cumulativo e gi
  - Isolamento Domiciliare
  - Tamponi
 
-I grafici sono costrutiti prendendo il file [dpc-covid19-ita-andamento-nazionale.json](https://github.com/pcm-dpc/COVID-19/blob/master/dati-json/dpc-covid19-ita-andamento-nazionale.json).
+I grafici sono costruiti prendendo il file [dpc-covid19-ita-andamento-nazionale.json](https://github.com/pcm-dpc/COVID-19/blob/master/dati-json/dpc-covid19-ita-andamento-nazionale.json).
 
 ## Contribuire
 
