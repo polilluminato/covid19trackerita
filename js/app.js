@@ -123,7 +123,7 @@ $(function (e) {
     $.getJSON('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json', function (data) {
         let arrayDati = data;
         let dataAggiornamento = arrayDati[arrayDati.length - 1].data;
-        $("#data_aggiornamento").text(dataAggiornamento);
+        $("#data_aggiornamento").text(dayjs(dataAggiornamento).format("DD/MM/YYYY @HH:mm"));
         let objValori = getValoriFormattati(arrayDati);
         creaGrafici(objValori);
     })
