@@ -25,6 +25,6 @@ Se trovate un errore nel codice e volete suggerire una modifica aprite una segna
 
 ## Licenza
 
-COVID-19 Tracker Ita è rilasciato con licenza [MIT license](LICENSE.md) [Licenza MIT su Wikipedia](https://it.wikipedia.org/wiki/Licenza_MIT). È possibile utilizzare il codice per qualsiasi scopo, compresi i progetti commerciali.
+COVID-19 Tracker Ita è rilasciato con licenza [MIT license](LICENSE.md) . È possibile utilizzare il codice per qualsiasi scopo, compresi i progetti commerciali. [Licenza MIT su Wikipedia](https://it.wikipedia.org/wiki/Licenza_MIT)
 
 [![license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
