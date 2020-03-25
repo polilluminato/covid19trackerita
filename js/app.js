@@ -87,7 +87,7 @@ $(function (e) {
         //  non riesce a prendere i div creati dinamicamente e quindi non riesce a creare i grafici
         tutteStats.forEach(singolaStat => {
 
-            //Creo il grafico per il cumulativo
+            //Creo il grafico per la visualizzazione cumulativa
             new Chart(document.getElementById(`chart-${singolaStat.key}_cumulativo`).getContext('2d'), {
                 type: 'line',
                 data: {
@@ -102,7 +102,7 @@ $(function (e) {
                 options: custom.options
             });
 
-            //Creo il grafico per il giornaliero
+            //Creo il grafico per la visualizzazione giornaliera
             new Chart(document.getElementById(`chart-${singolaStat.key}_giornaliero`).getContext('2d'), {
                 type: 'bar',
                 data: {
