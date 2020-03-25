@@ -2,6 +2,21 @@
 
 Questo progetto riporta i grafici delle statistiche messe a disposizione dalla Protezione Civile per l'emergenza Corona Virus (COVID-19) in Italia. La pagina pubblica del progetto la potete trovare qui: [COVID-19 Tracker Ita](https://polilluminato.github.io/covid19trackerita/)
 
+La pagina è divisa a sezioni in cui vengono riportati i grafici cumulativo e giornaliero per:
+
+ - Totale Casi
+ - Dimessi Guariti
+ - Terapia Intensiva
+ - Deceduti
+ - Totale Attualmente Positivi
+ - Nuovi Attualmente Positivi
+ - Ricoverati con sintomi
+ - Totale Ospedalizzati
+ - Isolamento Domiciliare
+ - Tamponi
+
+I grafici sono costrutiti prendendo il file [dpc-covid19-ita-andamento-nazionale.json](https://github.com/pcm-dpc/COVID-19/blob/master/dati-json/dpc-covid19-ita-andamento-nazionale.json).
+
 ## Contribuire
 
 Se trovate un errore nel codice e volete suggerire una modifica aprite una segnalazione con una ISSUE cercherò di risolverla il prima possibile.
