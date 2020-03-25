@@ -1,6 +1,6 @@
 # COVID-19 Tracker Ita
 
-Questo progetto riporta i grafici delle statistiche messe a disposizione dalla Protezione Civile per l'emergenza Corona Virus (COVID-19) in Italia. La pagina pubblica del progetto la potete trovare qui: [COVID-19 Tracker Ita](https://polilluminato.github.io/covid19trackerita/)
+Questo progetto riporta i grafici delle statistiche messe a disposizione dalla Protezione Civile per l'emergenza Corona Virus (COVID-19) in Italia in questo repository su GitHub: [COVID-19 Tracker Ita](https://polilluminato.github.io/covid19trackerita/)
 
 La pagina è divisa a sezioni in cui vengono riportati i grafici cumulativo e giornaliero per:
 
