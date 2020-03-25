@@ -60,7 +60,25 @@ $(function (e) {
         return obj;
     }
 
-    function creaGrafici(objValori){
+    function creaGrafici(objValori) {
+
+        //Creo tutti i div che conterranno i grafici
+        tutteStats.forEach(singolaStat => {
+            document.getElementById("sezione_grafici").innerHTML += 
+                `<div class="columns is-multiline singola_sezione">
+                    <div class="column is-full">
+                        <p class="title is-4">${singolaStat.titolo}</p>
+                    </div>
+                    <div class="column is-half">
+                        <p class="title is-5">Andamento Cumulativo</p>
+                        <canvas id="chart-${singolaStat.key}_cumulativo"></canvas>
+                    </div>
+                    <div class="column is-half">
+                        <p class="title is-5">Valori Singoli Giornalieri</p>
+                        <canvas id="chart-${singolaStat.key}_giornaliero"></canvas>
+                    </div>
+                </div>`;
+        });
 
         //Creo tutti i grafici
         //  NB: non posso fare tutto insieme in un unico for perchè non funziona, Charts.js in quel modo
