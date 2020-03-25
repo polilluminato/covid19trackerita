@@ -2,7 +2,7 @@ $(function (e) {
 
     //Impostazioni generiche per tutti i grafici
     var custom = {
-        borderColor : "#0066CC",
+        borderColor: "#0066CC",
         backgroundColor: "#dce9f5",
         barColor: "#0066CC",
         lineTension: .3,
@@ -23,28 +23,28 @@ $(function (e) {
         { key: "tamponi", titolo:"Tamponi"}
     ];
 
-    function getValoriFormattati(allStats){
+    //Funzione che prendendo il JSON ritornato dalla chiamata al repo della protezione civile
+    //  mi formatta i valori negli array che mi servono per creare i grafici
+    function getValoriFormattati(allStats) {
 
-        let obj = {
-            date: []
-        };
+        //Inizializzo l'oggetto con tutti gli array formattati che mi sarà passato dalla return
+        let obj = { date: [] };
 
         tutteStats.forEach(singolaStat => {
-            obj[singolaStat+"_giornaliero"] = [];
-            obj[singolaStat+"_cumulativo"] = [];
+            obj[singolaStat.key + "_giornaliero"] = [];
+            obj[singolaStat.key + "_cumulativo"] = [];
         });
-        console.log(obj);
 
-        for(let i = 0 ; i < allStats.length ; i++ ){
-            
+        for (let i = 0; i < allStats.length; i++) {
+
             let single = allStats[i];
 
             let singleDate = dayjs(single.data).format("DD-MM");
             //Aggiungo la data
-                obj.date.push(singleDate);
+            obj.date.push(singleDate);
 
 
-                tutteStats.forEach(singolaStat => {
+            tutteStats.forEach(singolaStat => {
 
                     obj[singolaStat+"_cumulativo"].push(single[singolaStat]);
 
@@ -62,7 +62,10 @@ $(function (e) {
 
     function creaGrafici(objValori){
 
-        tuttiGrafici.forEach(singleGrafico => {
+        //Creo tutti i grafici
+        //  NB: non posso fare tutto insieme in un unico for perchè non funziona, Charts.js in quel modo
+        //  non riesce a prendere i div creati dinamicamente e quindi non riesce a creare i
+        tutteStats.forEach(singolaStat => {
 
             new Chart(document.getElementById('chart-'+singleGrafico.key).getContext('2d'), {
                 // The type of chart we want to create
@@ -82,13 +85,12 @@ $(function (e) {
             });
 
         });
-        
+
     }
 
-    $.getJSON('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json', function(data){
+    $.getJSON('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json', function (data) {
         let arrayDati = data;
-        console.log(arrayDati[0])
-        let dataAggiornamento = arrayDati[arrayDati.length-1].data;
+        let dataAggiornamento = arrayDati[arrayDati.length - 1].data;
         $("#data_aggiornamento").text(dataAggiornamento);
         let objValori = getValoriFormattati(arrayDati);
         creaGrafici(objValori);
