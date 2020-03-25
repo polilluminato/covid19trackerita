@@ -30,6 +30,7 @@ $(function (e) {
         //Inizializzo l'oggetto con tutti gli array formattati che mi sarà passato dalla return
         let obj = { date: [] };
 
+        //Creo i singoli array giornaliero e cumulativo per ogni statistica
         tutteStats.forEach(singolaStat => {
             obj[singolaStat.key + "_giornaliero"] = [];
             obj[singolaStat.key + "_cumulativo"] = [];
@@ -46,15 +47,16 @@ $(function (e) {
 
             tutteStats.forEach(singolaStat => {
 
-                    obj[singolaStat+"_cumulativo"].push(single[singolaStat]);
+                //Aggiungo i [statistica]_cumulativo
+                obj[singolaStat.key + "_cumulativo"].push(single[singolaStat.key]);
 
-                    //Aggiungo i dimessi_guariti_giornaliero
-                    if(i == 0){
-                        obj[singolaStat+"_giornaliero"].push(single[singolaStat]);
-                    } else {
-                        obj[singolaStat+"_giornaliero"].push(allStats[i][singolaStat]-allStats[i-1][singolaStat]);
-                    }
-                });
+                //Aggiungo i [statistica]_giornaliero
+                if (i == 0) {
+                    obj[singolaStat.key + "_giornaliero"].push(single[singolaStat.key]);
+                } else {
+                    obj[singolaStat.key + "_giornaliero"].push(allStats[i][singolaStat.key] - allStats[i - 1][singolaStat.key]);
+                }
+            });
         }
 
         return obj;
@@ -85,20 +87,32 @@ $(function (e) {
         //  non riesce a prendere i div creati dinamicamente e quindi non riesce a creare i
         tutteStats.forEach(singolaStat => {
 
-            new Chart(document.getElementById('chart-'+singleGrafico.key).getContext('2d'), {
-                // The type of chart we want to create
-                type: singleGrafico.tipo,
-                // The data for our dataset
+            //Creo il grafico per il cumulativo
+            new Chart(document.getElementById(`chart-${singolaStat.key}_cumulativo`).getContext('2d'), {
+                type: 'line',
                 data: {
                     labels: objValori.date,
                     datasets: [{
-                        data: objValori[singleGrafico.key],
+                        data: objValori[`${singolaStat.key}_cumulativo`],
                         borderColor: custom.borderColor,
-                        backgroundColor: (singleGrafico.tipo == 'line' ? custom.backgroundColor : custom.barColor),
+                        backgroundColor: custom.backgroundColor,
                         lineTension: custom.lineTension
                     }],
                 },
-                // Configuration options go here
+                options: custom.options
+            });
+
+            //Creo i grafico per il giornaliero
+            new Chart(document.getElementById(`chart-${singolaStat.key}_giornaliero`).getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: objValori.date,
+                    datasets: [{
+                        data: objValori[`${singolaStat.key}_giornaliero`],
+                        borderColor: custom.borderColor,
+                        backgroundColor: custom.barColor,
+                    }],
+                },
                 options: custom.options
             });
 
