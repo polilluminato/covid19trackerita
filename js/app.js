@@ -9,27 +9,18 @@ $(function (e) {
         options: { legend: { display: false, } }
     };
 
-    var tutteStats = ["ricoverati_con_sintomi","terapia_intensiva","totale_ospedalizzati","isolamento_domiciliare",
-                            "totale_attualmente_positivi","nuovi_attualmente_positivi","dimessi_guariti","deceduti",
-                            "totale_casi","tamponi"]
-
-    var tuttiGrafici = [
-        {
-            key: 'totale_casi_cumulativo',
-            tipo: 'line'
-        },
-        {
-            key: 'totale_casi_giornaliero',
-            tipo: 'bar'
-        },
-        {
-            key: 'dimessi_guariti_cumulativo',
-            tipo: 'line'
-        },
-        {
-            key: 'dimessi_guariti_giornaliero',
-            tipo: 'bar'
-        },
+    //Nomi dei valori che vengono messi a disposizionne dal file JSON della protezione civile
+    var tutteStats = [
+        { key: "totale_casi", titolo:"Totale Casi"}, 
+        { key: "dimessi_guariti", titolo:"Dimessi Guariti"},
+        { key: "terapia_intensiva", titolo:"Terapia Intensiva"},
+        { key: "deceduti", titolo:"Deceduti"},
+        { key: "totale_attualmente_positivi", titolo:"Totale Attualmente Positivi"},
+        { key: "nuovi_attualmente_positivi", titolo:"Nuovi Attualmente Positivi"},
+        { key: "ricoverati_con_sintomi", titolo:"Ricoverati con sintomi"},
+        { key: "totale_ospedalizzati", titolo:"Totale Ospedalizzati"},
+        { key: "isolamento_domiciliare", titolo:"Isolamento Domiciliare"},
+        { key: "tamponi", titolo:"Tamponi"}
     ];
 
     function getValoriFormattati(allStats){
