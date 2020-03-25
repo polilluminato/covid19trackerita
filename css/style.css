@@ -1,5 +1,7 @@
 .singola_sezione {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
 }
 .footer {
     margin-top: 5rem;
