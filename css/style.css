@@ -1,9 +1,18 @@
 .singola_sezione {
     margin-top: 2.5rem;
-    border: 1px solid #dcdcdc;
-    border-radius: 8px;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
 }
 .footer {
     margin-top: 5rem;
     padding-bottom: 3rem;
+}
+
+.statistica_singola {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #292929;
+}
+.statistica_singola p {
+    padding-left: 1rem;
 }
