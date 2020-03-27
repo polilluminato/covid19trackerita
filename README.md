@@ -8,14 +8,8 @@ La pagina è divisa a sezioni in cui vengono riportati i grafici cumulativo e gi
 
  - Totale Casi
  - Dimessi Guariti
- - Terapia Intensiva
  - Deceduti
- - Totale Attualmente Positivi
- - Nuovi Attualmente Positivi
- - Ricoverati con sintomi
- - Totale Ospedalizzati
- - Isolamento Domiciliare
- - Tamponi
+ - Terapia Intensiva
 
 I grafici sono costruiti prendendo il file [dpc-covid19-ita-andamento-nazionale.json](https://github.com/pcm-dpc/COVID-19/blob/master/dati-json/dpc-covid19-ita-andamento-nazionale.json).
 
