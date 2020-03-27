@@ -13,6 +13,7 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.1/css/bulma.min.css" integrity="sha256-1nEaE91OpXJD7M6W5uSiqxhdmrY+lOOTHC1iUxU9Pds=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -29,7 +30,7 @@
 
 <body>
 
-    <section style="margin-top: 5rem; margin-bottom: 5rem;">
+    <section style="margin-top: 5rem; margin-bottom: 2rem;">
         <div class="container is-fluid">
             <div class="columns">
                 <div class="column is-1">
@@ -42,6 +43,43 @@
                     <h1 class="title is-1">COVID-19 Tracker Ita</h1>
                     <h2 class="subtitle is-4" style="margin-bottom:.5rem;">Dati sull'emergenza del COVID-19 in Italia messi a disposizione sulla pagina GitHub <a href="https://github.com/pcm-dpc/COVID-19">COVID-19</a> dal Dipartimento della Protezione Civile e aggiornati al <b id="data_aggiornamento"></b></h2>
                     <p>Il repository del sorgente è disponibile <a href="https://github.com/polilluminato/covid19trackerita">qui</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container is-fluid">
+            <div class="columns">
+                <div class="column is-4">
+                    <div class="card has-background-warning">
+                        <div class="card-content">
+                            <div class="statistica_singola">
+                                <i class="far fa-meh fa-3x"></i>
+                                <p>Totale Casi <b id="numero_totale"></b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="card has-background-success">
+                        <div class="card-content">
+                            <div class="statistica_singola">
+                                <i class="far fa-smile fa-3x"></i>
+                                <p>Dimessi Guariti <b id="numero_guariti"></b> (<span id="percentuale_guariti_sul_totale"></span>)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="card has-background-danger">
+                        <div class="card-content">
+                            <div class="statistica_singola">
+                                <i class="far fa-sad-tear fa-3x"></i>
+                                <p>Deceduti <b id="numero_deceduti"></b> (<span id="percentuale_deceduti_sul_totale"></span>)</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

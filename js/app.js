@@ -2,25 +2,22 @@ $(function (e) {
 
     //Impostazioni generiche per tutti i grafici
     var custom = {
-        borderColor: "#0066CC",
-        backgroundColor: "#dce9f5",
-        barColor: "#0066CC",
         lineTension: .3,
         options: { legend: { display: false, } }
     };
 
     //Nomi dei valori che vengono messi a disposizionne dal file JSON della protezione civile
     var tutteStats = [
-        { key: "totale_casi", titolo:"Totale Casi"}, 
-        { key: "dimessi_guariti", titolo:"Dimessi Guariti"},
-        { key: "terapia_intensiva", titolo:"Terapia Intensiva"},
-        { key: "deceduti", titolo:"Deceduti"},
-        { key: "totale_attualmente_positivi", titolo:"Totale Attualmente Positivi"},
-        { key: "nuovi_attualmente_positivi", titolo:"Nuovi Attualmente Positivi"},
-        { key: "ricoverati_con_sintomi", titolo:"Ricoverati con sintomi"},
-        { key: "totale_ospedalizzati", titolo:"Totale Ospedalizzati"},
-        { key: "isolamento_domiciliare", titolo:"Isolamento Domiciliare"},
-        { key: "tamponi", titolo:"Tamponi"}
+        { key: "totale_casi", titolo:"Totale Casi", color: "#FFDD57", backgroundColor: "#fff3c3"}, 
+        { key: "dimessi_guariti", titolo:"Dimessi Guariti", color: "#48C774", backgroundColor: "#cbffde"},
+        { key: "deceduti", titolo:"Deceduti", color: "#F14668", backgroundColor: "#ffb9c6"},
+        { key: "terapia_intensiva", titolo:"Terapia Intensiva", color: "#0066CC", backgroundColor: "#cce1ff"},
+        //{ key: "totale_attualmente_positivi", titolo:"Totale Attualmente Positivi"},
+        //{ key: "nuovi_attualmente_positivi", titolo:"Nuovi Attualmente Positivi"},
+        //{ key: "ricoverati_con_sintomi", titolo:"Ricoverati con sintomi"},
+        //{ key: "totale_ospedalizzati", titolo:"Totale Ospedalizzati"},
+        //{ key: "isolamento_domiciliare", titolo:"Isolamento Domiciliare"},
+        //{ key: "tamponi", titolo:"Tamponi"}
     ];
 
     //Funzione che prendendo il JSON ritornato dalla chiamata al repo della protezione civile
@@ -94,8 +91,8 @@ $(function (e) {
                     labels: objValori.date,
                     datasets: [{
                         data: objValori[`${singolaStat.key}_cumulativo`],
-                        borderColor: custom.borderColor,
-                        backgroundColor: custom.backgroundColor,
+                        borderColor: singolaStat.color,
+                        backgroundColor: singolaStat.backgroundColor,
                         lineTension: custom.lineTension
                     }],
                 },
@@ -109,8 +106,8 @@ $(function (e) {
                     labels: objValori.date,
                     datasets: [{
                         data: objValori[`${singolaStat.key}_giornaliero`],
-                        borderColor: custom.borderColor,
-                        backgroundColor: custom.barColor,
+                        borderColor: singolaStat.backgroundColor,
+                        backgroundColor: singolaStat.color,
                     }],
                 },
                 options: custom.options
@@ -120,10 +117,23 @@ $(function (e) {
 
     }
 
+    function calcolaPercentuale(valore,totale){
+        return ((parseInt(valore)/parseInt(totale))*100).toFixed(2);
+    }
+
     $.getJSON('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json', function (data) {
         let arrayDati = data;
-        let dataAggiornamento = arrayDati[arrayDati.length - 1].data;
-        $("#data_aggiornamento").text(dayjs(dataAggiornamento).format("DD/MM/YYYY @HH:mm"));
+            let ultimoGiorno = arrayDati[arrayDati.length - 1];
+            let penultimoGiorno = arrayDati[arrayDati.length - 2];
+
+            //Setto i valori singoli
+            $("#data_aggiornamento").text(dayjs(ultimoGiorno.data).format("DD/MM/YYYY @HH:mm"));
+            $("#numero_totale").text(ultimoGiorno.totale_casi);
+            $("#numero_guariti").text(ultimoGiorno.dimessi_guariti);
+                $("#percentuale_guariti_sul_totale").text(calcolaPercentuale(ultimoGiorno.dimessi_guariti,ultimoGiorno.totale_casi)+"%");
+            $("#numero_deceduti").text(ultimoGiorno.deceduti);
+                $("#percentuale_deceduti_sul_totale").text(calcolaPercentuale(ultimoGiorno.deceduti,ultimoGiorno.totale_casi)+"%");
+
         let objValori = getValoriFormattati(arrayDati);
         creaGrafici(objValori);
     })
