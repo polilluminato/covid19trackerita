@@ -142,6 +142,19 @@ $(function (e) {
 
         let objValori = getValoriFormattati(arrayDati);
         creaGrafici(objValori);
+    //Funzione che mi crea un array con solo le regioni per la select con cui filtro i dati
+    function getArraySoloRegioni(){
+        let arraySoloRegioni = [];
+
+        arrayDataRegioni.forEach(singolo => {
+            let tempObj = {id:singolo.codice_regione,nome:singolo.denominazione_regione};
+            //Vado a vedere se quella regione è già presente altrimenti la aggiungo
+            if(arraySoloRegioni.filter(e => (e.id === tempObj.id && e.nome === tempObj.nome)).length === 0){
+                arraySoloRegioni.push(tempObj)
+            }
+        });
+        return arraySoloRegioni;
+    }
     })
 
 })
