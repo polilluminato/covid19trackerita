@@ -187,4 +187,24 @@ $(function (e) {
         })
     })
 
+    //Sento il change sulla select del filtro e aggiorno i dati che uso per creare la pagina
+    $('#select_filtro').on('change', function() {
+        //Devo andare a prendere l'array di valori giusto, eventualmente filtrarlo per quella regione
+        //e ricompilare la pagina
+        if(this.value == 0){ //Sono nel caso dell'andamento nazionale
+            compilaPaginaConValoriGrafici(arrayDataNazionale);
+        } else {
+
+            //E' stata selezionata una regione, quindi filtro array dei dati e poi aggiorno la pagina
+            let arrayDataRegioniFiltrato = [];
+            arrayDataRegioni.forEach(singolo => {
+                if(singolo.codice_regione == this.value ){
+                    arrayDataRegioniFiltrato.push(singolo);
+                }
+            });
+            
+            compilaPaginaConValoriGrafici(arrayDataRegioniFiltrato);
+        }
+    });
+
 })
