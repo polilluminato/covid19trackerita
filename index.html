@@ -51,7 +51,17 @@
     <section>
         <div class="container is-fluid">
             <div class="columns">
-                <div class="column is-4">
+                <div class="column is-3">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title is-6">Filtro</p>
+                            <div class="select">
+                                <select id="select_filtro"></select>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
                     <div class="card has-background-warning">
                         <div class="card-content">
                             <div class="statistica_singola">
@@ -61,22 +71,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="column is-4">
+                <div class="column">
                     <div class="card has-background-success">
                         <div class="card-content">
                             <div class="statistica_singola">
                                 <i class="far fa-smile fa-3x"></i>
-                                <p>Dimessi Guariti <b id="numero_guariti"></b> (<span id="percentuale_guariti_sul_totale"></span>)</p>
+                                <p>Dimessi Guariti <b id="numero_guariti"></b><br>(<span id="percentuale_guariti_sul_totale"></span>)</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="column is-4">
+                <div class="column">
                     <div class="card has-background-danger">
                         <div class="card-content">
                             <div class="statistica_singola">
                                 <i class="far fa-sad-tear fa-3x"></i>
-                                <p>Deceduti <b id="numero_deceduti"></b> (<span id="percentuale_deceduti_sul_totale"></span>)</p>
+                                <p>Deceduti <b id="numero_deceduti"></b><br>(<span id="percentuale_deceduti_sul_totale"></span>)</p>
                             </div>
                         </div>
                     </div>
