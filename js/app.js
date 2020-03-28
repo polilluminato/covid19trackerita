@@ -64,6 +64,9 @@ $(function (e) {
 
     function creaGrafici(objValori) {
 
+        //Resetto tutta la sezione dei grafici
+        $("#sezione_grafici").html('');
+
         //Creo tutti i div che conterranno i grafici
         tutteStats.forEach(singolaStat => {
             document.getElementById("sezione_grafici").innerHTML += 
