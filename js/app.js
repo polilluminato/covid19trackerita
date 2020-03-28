@@ -5,6 +5,9 @@ $(function (e) {
         lineTension: .3,
         options: { legend: { display: false, } }
     };
+    
+    var arrayDataNazionale = [];
+    var arrayDataRegioni = [];
 
     //Nomi dei valori che vengono messi a disposizionne dal file JSON della protezione civile
     var tutteStats = [
