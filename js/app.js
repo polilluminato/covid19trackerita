@@ -127,12 +127,9 @@ $(function (e) {
         return ((parseInt(valore)/parseInt(totale))*100).toFixed(2);
     }
 
-    $.getJSON('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json', function (data) {
-        let arrayDati = data;
-            let ultimoGiorno = arrayDati[arrayDati.length - 1];
-            let penultimoGiorno = arrayDati[arrayDati.length - 2];
-
-            //Setto i valori singoli
+    function compilaPaginaConValoriGrafici(arrayDati){
+        let ultimoGiorno = arrayDati[arrayDati.length - 1];
+                //Setto i valori singoli
             $("#data_aggiornamento").text(dayjs(ultimoGiorno.data).format("DD/MM/YYYY @HH:mm"));
             $("#numero_totale").text(ultimoGiorno.totale_casi);
             $("#numero_guariti").text(ultimoGiorno.dimessi_guariti);
@@ -142,6 +139,8 @@ $(function (e) {
 
         let objValori = getValoriFormattati(arrayDati);
         creaGrafici(objValori);
+    }
+
     //Funzione che mi crea un array con solo le regioni per la select con cui filtro i dati
     function getArraySoloRegioni(){
         let arraySoloRegioni = [];
