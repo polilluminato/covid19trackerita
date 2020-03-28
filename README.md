@@ -11,7 +11,12 @@ La pagina è divisa a sezioni in cui vengono riportati i grafici cumulativo e gi
  - Deceduti
  - Terapia Intensiva
 
-I grafici sono costruiti prendendo il file [dpc-covid19-ita-andamento-nazionale.json](https://github.com/pcm-dpc/COVID-19/blob/master/dati-json/dpc-covid19-ita-andamento-nazionale.json).
+ All'interno della pagina è possibile filtrare la visualizzazione e quindi la creazione dei grafici per **Andamento Nazionale** o per **Singola Regione**.
+
+I grafici sono costruiti prendendo i file:
+
+ - [dpc-covid19-ita-andamento-nazionale.json](https://github.com/pcm-dpc/COVID-19/blob/master/dati-json/dpc-covid19-ita-andamento-nazionale.json)
+ - [dpc-covid19-ita-regioni.json](https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni.json)
 
 ## Contribuire
 
