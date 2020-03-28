@@ -155,6 +155,20 @@ $(function (e) {
         });
         return arraySoloRegioni;
     }
+
+    //Funzione che mi crea la select con le regioni per filtrare i dati
+    function creaSelectRegioni(){
+        let arrayRegioni = getArraySoloRegioni();
+
+        //Metto anche come opzione l'andamento nazionale
+        opzioniSelect = '<option value="0">Andamento Nazionale</option>';
+        arrayRegioni.forEach(singola => {
+            opzioniSelect += `
+                <option value="${singola.id}">${singola.nome}</option>
+            `;
+        });
+        $("#select_filtro").html(opzioniSelect);
+    }
     })
 
 })
