@@ -8,6 +8,7 @@ $(function (e) {
     
     var arrayDataNazionale = [];
     var arrayDataRegioni = [];
+    var arrayRefGrafici = []; //Array che mi tiene i riferimenti ai grafici in modo che possa cambiare le loro impostazioni
 
     //Nomi dei valori che vengono messi a disposizionne dal file JSON della protezione civile
     var tutteStats = [
@@ -64,22 +65,31 @@ $(function (e) {
 
     function creaGrafici(objValori) {
 
-        //Resetto tutta la sezione dei grafici
+        //Resetto tutta la sezione dei grafici e l'array dei riferimenti ai grafici
         $("#sezione_grafici").html('');
+        arrayRefGrafici = [];
 
         //Creo tutti i div che conterranno i grafici
-        tutteStats.forEach(singolaStat => {
+        tutteStats.forEach((singolaStat,index) => {
             document.getElementById("sezione_grafici").innerHTML += 
                 `<div class="columns is-multiline singola_sezione">
                     <div class="column is-full">
                         <p class="title is-4">${singolaStat.titolo}</p>
                     </div>
                     <div class="column is-half">
-                        <p class="title is-5">Andamento Cumulativo</p>
+                        <div class="titolo">
+                            <p class="title is-5">Andamento Cumulativo</p>
+                            <div class="sezione_bottoni">
+                                <button class="button is-small bottone btn_change_scala_grafico is-info is-light" data-progressivo="${index*2}" data-tipo="logarithmic">LOGARTIMICO</button>
+                                <button class="button is-small bottone btn_change_scala_grafico is-info" data-progressivo="${index*2}" data-tipo="linear">LINEARE</button>
+                            </div>
+                        </div>
                         <canvas id="chart-${singolaStat.key}_cumulativo"></canvas>
                     </div>
                     <div class="column is-half">
-                        <p class="title is-5">Valori Singoli Giornalieri</p>
+                        <div class="titolo">
+                            <p class="title is-5">Valori Singoli Giornalieri</p>
+                        </div>
                         <canvas id="chart-${singolaStat.key}_giornaliero"></canvas>
                     </div>
                 </div>`;
@@ -91,7 +101,7 @@ $(function (e) {
         tutteStats.forEach(singolaStat => {
 
             //Creo il grafico per la visualizzazione cumulativa
-            new Chart(document.getElementById(`chart-${singolaStat.key}_cumulativo`).getContext('2d'), {
+            let graph1 = new Chart(document.getElementById(`chart-${singolaStat.key}_cumulativo`).getContext('2d'), {
                 type: 'line',
                 data: {
                     labels: objValori.date,
@@ -106,7 +116,7 @@ $(function (e) {
             });
 
             //Creo il grafico per la visualizzazione giornaliera
-            new Chart(document.getElementById(`chart-${singolaStat.key}_giornaliero`).getContext('2d'), {
+            let graph2 = new Chart(document.getElementById(`chart-${singolaStat.key}_giornaliero`).getContext('2d'), {
                 type: 'bar',
                 data: {
                     labels: objValori.date,
@@ -119,22 +129,34 @@ $(function (e) {
                 options: custom.options
             });
 
-        });
+            //Aggiunto i grafici all'array dei grafici per averne i riferimenti
+            arrayRefGrafici.push(graph1); arrayRefGrafici.push(graph2);
 
+        });
     }
 
     function calcolaPercentuale(valore,totale){
         return ((parseInt(valore)/parseInt(totale))*100).toFixed(2);
     }
 
+    //Funzione per calcolare la variazione di una determinata chiave tra due giorni
+    function calcolaVariazioneGiorniConsecutivi(dayOggi,dayIeri,chiave){
+        let valore = dayOggi[chiave]-dayIeri[chiave];
+        return ( valore >= 0 ? `+${valore}` : `-${valore}` );
+    }
+
     function compilaPaginaConValoriGrafici(arrayDati){
         let ultimoGiorno = arrayDati[arrayDati.length - 1];
+        let penultimoGiorno = arrayDati[arrayDati.length - 2];
                 //Setto i valori singoli
             $("#data_aggiornamento").text(dayjs(ultimoGiorno.data).format("DD/MM/YYYY @HH:mm"));
             $("#numero_totale").text(ultimoGiorno.totale_casi);
+                $("#variazione_numero_totale").text(calcolaVariazioneGiorniConsecutivi(ultimoGiorno,penultimoGiorno,"totale_casi"));
             $("#numero_guariti").text(ultimoGiorno.dimessi_guariti);
+                $("#variazione_numero_guariti").text(calcolaVariazioneGiorniConsecutivi(ultimoGiorno,penultimoGiorno,"dimessi_guariti"));
                 $("#percentuale_guariti_sul_totale").text(calcolaPercentuale(ultimoGiorno.dimessi_guariti,ultimoGiorno.totale_casi)+"%");
             $("#numero_deceduti").text(ultimoGiorno.deceduti);
+                $("#variazione_numero_deceduti").text(calcolaVariazioneGiorniConsecutivi(ultimoGiorno,penultimoGiorno,"deceduti"));
                 $("#percentuale_deceduti_sul_totale").text(calcolaPercentuale(ultimoGiorno.deceduti,ultimoGiorno.totale_casi)+"%");
 
         let objValori = getValoriFormattati(arrayDati);
@@ -205,5 +227,21 @@ $(function (e) {
             compilaPaginaConValoriGrafici(arrayDataRegioniFiltrato);
         }
     });
+
+    //Funzione per cambiare il tipo di asse delle Y nei grafici di andamento cumulativo
+    //  passo da logaritmico a lineare
+    $(document).on("click", "button.btn_change_scala_grafico" , function() {
+        let progressivo = $(this).data('progressivo');
+        let tipoGrafico = $(this).data('tipo');
+
+        //Cambio asse delle y e faccio update del grafico
+        arrayRefGrafici[progressivo].options.scales.yAxes[0] = {type:tipoGrafico};
+        arrayRefGrafici[progressivo].update();
+
+        //Cambio il colore ai bottoni (faccio lo switch tra i due)
+        $("button.btn_change_scala_grafico[data-progressivo='" + progressivo +"']").toggleClass('is-light');
+    });
+
+
 
 })

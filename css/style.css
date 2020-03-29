@@ -7,6 +7,19 @@
     padding-bottom: 3rem;
 }
 
+.padre_colonne_riassunto{
+    width: 100%;
+}
+.padre_colonne_riassunto .column {
+    display: flex;
+}
+.padre_colonne_riassunto .column .card {
+    flex: 1;
+    display: flex;
+}
+.padre_colonne_riassunto .column .card .card-content {
+    display: flex;
+}
 .statistica_singola {
     display: flex;
     flex-direction: row;
@@ -16,3 +29,32 @@
 .statistica_singola p {
     padding-left: 1rem;
 }
+.statistica_singola p span.grassetto{
+    font-weight: bold;
+}
+
+/*Sezione per i grafici*/
+.singola_sezione .titolo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.singola_sezione .titolo p{
+    margin-bottom: 0;
+}
+.singola_sezione .titolo .immaginetta_download {
+    margin-right: 10px;
+}
+.singola_sezione .titolo .sezione_bottoni {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
+.singola_sezione .titolo .sezione_bottoni .bottone {
+    font-size: 12px;
+}
+.singola_sezione .titolo .sezione_bottoni .bottone:first-child {
+    margin-right: 10px;
+}
+/*Sezione per i grafici*/

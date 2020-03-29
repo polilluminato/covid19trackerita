@@ -50,10 +50,10 @@
 
     <section>
         <div class="container is-fluid">
-            <div class="columns">
+            <div class="columns padre_colonne_riassunto">
                 <div class="column is-3">
                     <div class="card">
-                        <div class="card-content">
+                        <div class="card-content" style="flex-direction: column;">
                             <p class="title is-6">Filtro</p>
                             <div class="select">
                                 <select id="select_filtro"></select>
@@ -66,7 +66,8 @@
                         <div class="card-content">
                             <div class="statistica_singola">
                                 <i class="far fa-meh fa-3x"></i>
-                                <p>Totale Casi <b id="numero_totale"></b></p>
+                                <p>Totale Casi <span class="grassetto" id="numero_totale"></span><br>
+                                    <span class="grassetto" id="variazione_numero_totale"></span> rispetto a ieri</p>
                             </div>
                         </div>
                     </div>
@@ -76,7 +77,9 @@
                         <div class="card-content">
                             <div class="statistica_singola">
                                 <i class="far fa-smile fa-3x"></i>
-                                <p>Dimessi Guariti <b id="numero_guariti"></b><br>(<span id="percentuale_guariti_sul_totale"></span>)</p>
+                                <p>Dimessi Guariti <span class="grassetto" id="numero_guariti"></span><br>
+                                    <span class="grassetto" id="variazione_numero_guariti"></span> rispetto a ieri<br>
+                                    <span class="grassetto" id="percentuale_guariti_sul_totale"></span> del totale</p>
                             </div>
                         </div>
                     </div>
@@ -86,7 +89,9 @@
                         <div class="card-content">
                             <div class="statistica_singola">
                                 <i class="far fa-sad-tear fa-3x"></i>
-                                <p>Deceduti <b id="numero_deceduti"></b><br>(<span id="percentuale_deceduti_sul_totale"></span>)</p>
+                                <p>Deceduti <span class="grassetto" id="numero_deceduti"></span><br>
+                                    <span class="grassetto" id="variazione_numero_deceduti"></span> rispetto a ieri<br>
+                                    <span class="grassetto" id="percentuale_deceduti_sul_totale"></span> del totale</p>
                             </div>
                         </div>
                     </div>
