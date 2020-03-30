@@ -1,5 +1,8 @@
 $(function (e) {
 
+    var urlJsonAndamentoNazionale = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json';
+    var urlJsonAndamentoRegioni = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni.json';
+
     //Impostazioni generiche per tutti i grafici
     var custom = {
         lineTension: .3,
@@ -192,11 +195,11 @@ $(function (e) {
     }
 
     //Vado a scaricare i due JSON per andamento nazionale e regioni dal repository della protezione civile
-    $.getJSON('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json', function (data) {
+    $.getJSON(urlJsonAndamentoNazionale, function (data) {
         
         arrayDataNazionale = data;
 
-        $.getJSON('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni.json', function (data) {
+        $.getJSON(urlJsonAndamentoRegioni, function (data) {
 
             arrayDataRegioni = data;
             
