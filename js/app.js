@@ -83,15 +83,27 @@ $(function (e) {
                         <div class="titolo">
                             <p class="title is-5">Andamento Cumulativo</p>
                             <div class="sezione_bottoni">
-                                <button class="button is-small bottone btn_change_scala_grafico is-info is-light" data-progressivo="${index*2}" data-tipo="logarithmic">LOGARTIMICO</button>
-                                <button class="button is-small bottone btn_change_scala_grafico is-info" data-progressivo="${index*2}" data-tipo="linear">LINEARE</button>
+                                <button class="button is-small bottone btn_change_scala_grafico is-info is-light" 
+                                    data-progressivo="${index*2}" data-tipo="logarithmic">LOGARTIMICO</button>
+                                <button class="button is-small bottone btn_change_scala_grafico is-info" 
+                                    data-progressivo="${index*2}" data-tipo="linear">LINEARE</button>
                             </div>
+                            <button class="button is-small btn_salva_immagine" 
+                                    data-nomegrafico="chart-${singolaStat.key}_cumulativo" 
+                                    data-progressivo="${index*2}">
+                                        <i class="fas fa-download immaginetta_download"></i> Salva
+                            </button>
                         </div>
                         <canvas id="chart-${singolaStat.key}_cumulativo"></canvas>
                     </div>
                     <div class="column is-half">
                         <div class="titolo">
                             <p class="title is-5">Valori Singoli Giornalieri</p>
+                            <button class="button is-small btn_salva_immagine" 
+                                data-nomegrafico="chart-${singolaStat.key}_giornaliero" 
+                                data-progressivo="${index*2+1}">
+                                    <i class="fas fa-download immaginetta_download"></i> Salva
+                            </button>
                         </div>
                         <canvas id="chart-${singolaStat.key}_giornaliero"></canvas>
                     </div>
