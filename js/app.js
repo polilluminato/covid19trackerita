@@ -231,6 +231,11 @@ $(function (e) {
     //Funzione per cambiare il tipo di asse delle Y nei grafici di andamento cumulativo
     //  passo da logaritmico a lineare
     $(document).on("click", "button.btn_change_scala_grafico" , function() {
+
+        if(!$(this).hasClass('is-light')){ //Il bottone è già attivo e io lo sto premendo di nuovo
+            return;
+        }
+
         let progressivo = $(this).data('progressivo');
         let tipoGrafico = $(this).data('tipo');
 
