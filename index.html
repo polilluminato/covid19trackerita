@@ -40,13 +40,11 @@
                 </div>
                 <div class="column is-1"></div>
                 <div class="column colonna_titolo">
-                    <h1 class="title is-1" data-i18n="c19ti_title"></h1>
+                    <h1 class="title is-1">COVID-19 Tracker ITA</h1>
                     <h2 class="subtitle is-4" style="margin-bottom:.5rem;">
-                        <span data-i18n="c19ti_subtitle_p1"></span> 
-                            <a href="https://github.com/pcm-dpc/COVID-19"data-i18n="c19ti_covid19"></a> 
-                        <span data-i18n="c19ti_subtitle_p2"></span> <b id="data_aggiornamento"></b>
+                        Dati sull'emergenza del COVID-19 in Italia messi a disposizione sulla pagina GitHub <a href="https://github.com/pcm-dpc/COVID-19">COVID-19</a> dal Dipartimento della Protezione Civile e aggiornati al <b id="data_aggiornamento"></b>
                     </h2>
-                    <p><span data-i18n="c19ti_testo_link_repo"></span> <a href="https://github.com/polilluminato/covid19trackerita" data-i18n="c19ti_qui"></a>.</p>
+                    <p>Il repository del sorgente è disponibile <a href="https://github.com/polilluminato/covid19trackerita">qui</a>.</p>
                 </div>
             </div>
         </div>
@@ -58,7 +56,7 @@
                 <div class="column is-3">
                     <div class="card">
                         <div class="card-content" style="flex-direction: column;">
-                            <p class="title is-6" data-i18n="c19ti_filtro"></p>
+                            <p class="title is-6" data-i18n="c19ti_filtro">Filtro</p>
                             <div class="select">
                                 <select id="select_filtro"></select>
                               </div>
@@ -71,10 +69,9 @@
                             <div class="statistica_singola">
                                 <i class="far fa-meh fa-3x"></i>
                                 <div>
-                                    <p><span data-i18n="c19ti_totale_casi"></span> 
-                                        <span class="grassetto" id="numero_totale"></span></p>
+                                    <p>Totale Casi <span class="grassetto" id="numero_totale"></span></p>
                                     <p><span class="grassetto" id="variazione_numero_totale"></span> 
-                                        <span data-i18n="c19ti_variazione_su_ieri"></span></p>
+                                        rispetto a ieri</p>
                                 </div>
                                 
                             </div>
@@ -87,12 +84,11 @@
                             <div class="statistica_singola">
                                 <i class="far fa-smile fa-3x"></i>
                                 <div>
-                                    <p><span data-i18n="c19ti_dimessi_guariti"></span> 
-                                        <span class="grassetto" id="numero_guariti"></span></p>
+                                    <p>Dimessi guariti <span class="grassetto" id="numero_guariti"></span></p>
                                     <p><span class="grassetto" id="variazione_numero_guariti"></span> 
-                                        <span data-i18n="c19ti_variazione_su_ieri"></span></p>
+                                        rispetto a ieri</p>
                                     <p><span class="grassetto" id="percentuale_guariti_sul_totale"></span> 
-                                        <span data-i18n="c19ti_valore_sul_totale"></span></p>
+                                        del totale</p>
                                 </div>
                             </div>
                         </div>
@@ -104,12 +100,11 @@
                             <div class="statistica_singola">
                                 <i class="far fa-sad-tear fa-3x"></i>
                                 <div>
-                                    <p><span data-i18n="c19ti_deceduti"></span> 
-                                        <span class="grassetto" id="numero_deceduti"></span></p>
+                                    <p>Deceduti <span class="grassetto" id="numero_deceduti"></span></p>
                                     <p><span class="grassetto" id="variazione_numero_deceduti"></span> 
-                                        <span data-i18n="c19ti_variazione_su_ieri"></span></p>
+                                        rispetto a ieri</p>
                                     <p><span class="grassetto" id="percentuale_deceduti_sul_totale"></span> 
-                                        <span data-i18n="c19ti_valore_sul_totale"></span></p>
+                                        del totale</p>
                                 </div>
                             </div>
                         </div>
@@ -127,25 +122,17 @@
         <div class="container is-fluid">
             <div class="content has-text-centered">
                 <p>
-                <strong data-i18n="c19ti_title"></strong> by <a href="https://albertobonacina.com/" data-i18n="c19ti_nome_cognome_autore"></a>. 
-                <span data-i18n="c19ti_testo_tipo_licenza"></span> 
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+                <strong>COVID-19 Tracker ITA</strong> by <a href="https://albertobonacina.com/">Alberto Bonacina</a>. 
+                Il codice sorgente è rilasciato con licenza <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
                 </p>
             </div>
         </div>
     </footer>
 
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js" integrity="sha256-vrn14y7WH7zgEElyQqm2uCGSQrX/xjYDjniRUQx3NyU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.23/dayjs.min.js" integrity="sha256-cWonUId5xt6NkGriuU0+9b+pO+LlBm2LKIIzITvRyBI=" crossorigin="anonymous"></script>
-    
-
-    <!--Script per gestire le traduzioni-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.7/jquery.i18n.min.js" integrity="sha256-Xe5TCNN0b3K98e99/oWJr0FOiSTILqWWWEaDCY48V5E=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.7/jquery.i18n.messagestore.min.js" integrity="sha256-dxDziD29LGTvKo6LXzZmm8o8W87YCu4BOh+tsrDJd4k=" crossorigin="anonymous"></script>
-    <script src="js/i18n.js"></script>
-
     <!--Codice per la creazione della pagina-->
     <script src="js/app.js"></script>
 
