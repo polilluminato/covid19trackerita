@@ -13,13 +13,6 @@ $(function (e) {
     var arrayDataRegioni = [];
     var arrayRefGrafici = []; //Array che mi tiene i riferimenti ai grafici in modo che possa cambiare le loro impostazioni
 
-    //Inizializzazione internazionalizzazione
-    $.i18n().load({
-        'it': 'i18n/it.json'
-    }).done(function() {
-        $('html').i18n();
-    });
-
     //Nomi dei valori che vengono messi a disposizionne dal file JSON della protezione civile
     var tutteStats = [
         { key: "totale_casi", titolo:"Totale Casi", color: "#FFDD57", backgroundColor: "#fff3c3"}, 

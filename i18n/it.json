@@ -6,5 +6,13 @@
 		"last-updated": "2020-03-31",
 		"locale": "it"
 	},
-	"c19ti-title": "COVID-19 Tracker ITA"
+	"c19ti_title": "COVID-19 Tracker ITA",
+	"c19ti_nome_cognome_autore": "Alberto Bonacina",
+	"c19ti_filtro":"Filtro",
+	"c19ti_totale_casi":"Totale Casi",
+	"c19ti_variazione_su_ieri":"rispetto a ieri",
+	"c19ti_dimessi_guariti":"Dimessi Guariti",
+	"c19ti_deceduti":"Deceduti",
+	"c19ti_valore_sul_totale":"del totale",
+	"c19ti_testo_tipo_licenza":"Il codice sorgente è rilasciato con licenza"
 }
