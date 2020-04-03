@@ -18,6 +18,10 @@ I grafici sono costruiti prendendo i file:
  - [dpc-covid19-ita-andamento-nazionale.json](https://github.com/pcm-dpc/COVID-19/blob/master/dati-json/dpc-covid19-ita-andamento-nazionale.json)
  - [dpc-covid19-ita-regioni.json](https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni.json)
 
+## Credits
+
+ - Icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](www.flaticon.com)
+
 ## Contribuire
 
 Se trovate un errore nel codice e volete suggerire una modifica aprite una segnalazione con una ISSUE cercherò di risolverla il prima possibile.
