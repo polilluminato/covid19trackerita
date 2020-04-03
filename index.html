@@ -62,10 +62,20 @@
         </div>
     </section>
 
+    <section style="margin-top: 2rem; margin-bottom: 2rem;">
+        <div class="container is-fluid">
+            <div class="columns">
+                <div class="column">
                     <h2 class="subtitle is-4" style="margin-bottom:.5rem;">
-                        Dati sull'emergenza del COVID-19 in Italia messi a disposizione sulla pagina GitHub <a href="https://github.com/pcm-dpc/COVID-19">COVID-19</a> dal Dipartimento della Protezione Civile e aggiornati al <b id="data_aggiornamento"></b>
+                        <span data-i18n="c19ti_subtitle_p1"></span> 
+                        <a href="https://github.com/pcm-dpc/COVID-19">COVID-19</a> 
+                        <span data-i18n="c19ti_subtitle_p2"></span>
+                        <b id="data_aggiornamento"></b>
                     </h2>
-                    <p>Il repository del sorgente è disponibile <a href="https://github.com/polilluminato/covid19trackerita">qui</a>.</p>
+                    <p>
+                        <span data-i18n="c19ti_text_link_repo"></span>
+                        <a href="https://github.com/polilluminato/covid19trackerita" data-i18n="c19ti_link_qui"></a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -77,10 +87,10 @@
                 <div class="column is-3">
                     <div class="card">
                         <div class="card-content" style="flex-direction: column;">
-                            <p class="title is-6" data-i18n="c19ti_filtro">Filtro</p>
+                            <p class="title is-6" data-i18n="c19ti_filtro"></p>
                             <div class="select">
                                 <select id="select_filtro"></select>
-                              </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -90,11 +100,16 @@
                             <div class="statistica_singola">
                                 <i class="far fa-meh fa-3x"></i>
                                 <div>
-                                    <p>Totale Casi <span class="grassetto" id="numero_totale"></span></p>
-                                    <p><span class="grassetto" id="variazione_numero_totale"></span> 
-                                        rispetto a ieri</p>
+                                    <p>
+                                        <span data-i18n="c19ti_totale_casi"></span>
+                                        <span class="grassetto" id="numero_totale"></span>
+                                    </p>
+                                    <p>
+                                        <span class="grassetto" id="variazione_numero_totale"></span>
+                                        <span data-i18n="c19ti_variazione_ieri"></span>
+                                    </p>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -105,11 +120,18 @@
                             <div class="statistica_singola">
                                 <i class="far fa-smile fa-3x"></i>
                                 <div>
-                                    <p>Dimessi guariti <span class="grassetto" id="numero_guariti"></span></p>
-                                    <p><span class="grassetto" id="variazione_numero_guariti"></span> 
-                                        rispetto a ieri</p>
-                                    <p><span class="grassetto" id="percentuale_guariti_sul_totale"></span> 
-                                        del totale</p>
+                                    <p>
+                                        <span data-i18n="c19ti_dimessi_guariti"></span> 
+                                        <span class="grassetto" id="numero_guariti"></span>
+                                    </p>
+                                    <p>
+                                        <span class="grassetto" id="variazione_numero_guariti"></span>
+                                        <span data-i18n="c19ti_variazione_ieri"></span>
+                                    </p>
+                                    <p>
+                                        <span class="grassetto" id="percentuale_guariti_sul_totale"></span>
+                                        <span data-i18n="c19ti_text_rispetto_totale"></span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -121,11 +143,17 @@
                             <div class="statistica_singola">
                                 <i class="far fa-sad-tear fa-3x"></i>
                                 <div>
-                                    <p>Deceduti <span class="grassetto" id="numero_deceduti"></span></p>
-                                    <p><span class="grassetto" id="variazione_numero_deceduti"></span> 
-                                        rispetto a ieri</p>
-                                    <p><span class="grassetto" id="percentuale_deceduti_sul_totale"></span> 
-                                        del totale</p>
+                                    <p>
+                                        <span data-i18n="c19ti_deceduti"></span> 
+                                        <span class="grassetto" id="numero_deceduti"></span></p>
+                                    <p>
+                                        <span class="grassetto" id="variazione_numero_deceduti"></span>
+                                        <span data-i18n="c19ti_variazione_ieri"></span>
+                                    </p>
+                                    <p>
+                                        <span class="grassetto" id="percentuale_deceduti_sul_totale"></span>
+                                        <span data-i18n="c19ti_text_rispetto_totale"></span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -143,8 +171,9 @@
         <div class="container is-fluid">
             <div class="content has-text-centered">
                 <p>
-                <strong>COVID-19 Tracker ITA</strong> by <a href="https://albertobonacina.com/">Alberto Bonacina</a>. 
-                Il codice sorgente è rilasciato con licenza <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+                    <strong>COVID-19 Tracker ITA</strong> by <a href="https://albertobonacina.com/">Alberto
+                        Bonacina</a>.<br><span data-i18n="c19ti_text_licenza_progetto"></span> <a
+                        href="http://opensource.org/licenses/mit-license.php">MIT</a>.
                 </p>
             </div>
         </div>
