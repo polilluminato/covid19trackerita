@@ -1,0 +1,16 @@
+{
+    "c19ti_subtitle_p1":"Dati sull'emergenza del COVID-19 in Italia messi a disposizione sulla pagina GitHub",
+    "c19ti_subtitle_p2":"dal Dipartimento della Protezione Civile e aggiornati al",
+    "c19ti_text_link_repo":"Il repository del sorgente è disponibile",
+    "c19ti_link_qui":"qui",
+    "c19ti_totale_casi":"Totale Casi",
+    "c19ti_dimessi_guariti":"Dimessi Guariti",
+    "c19ti_deceduti":"Deceduti",
+    "c19ti_terapia_intensiva":"Terapia Intensiva",
+    "c19ti_variazione_ieri":"rispetto a ieri",
+    "c19ti_text_rispetto_totale":"del totale",
+    "c19ti_text_licenza_progetto":"Il codice sorgente è rilasciato con licenza",
+    "c19ti_andamento_cumulativo":"Andamento Cumulativo",
+    "c19ti_valori_singoli_giornalieri":"Valori Singoli Giornalieri",
+    "c19ti_filtro":"Filtro"
+}
