@@ -186,7 +186,7 @@ $(function (e) {
         let arrayRegioni = getArraySoloRegioni();
 
         //Metto anche come opzione l'andamento nazionale
-        opzioniSelect = '<option value="0">Andamento Nazionale</option>';
+        opzioniSelect = '<option value="0">Italia</option>';
         arrayRegioni.forEach(singola => {
             opzioniSelect += `
                 <option value="${singola.id}">${singola.nome}</option>
