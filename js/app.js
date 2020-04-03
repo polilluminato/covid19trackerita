@@ -196,11 +196,11 @@ $(function (e) {
     }
 
     //Vado a scaricare i due JSON per andamento nazionale e regioni dal repository della protezione civile
-    $.getJSON(urlJsonAndamentoNazionale, function (data) {
+    $.getJSON(urlJsonAndamentoNazionale, (data) => {
         
         arrayDataNazionale = data;
 
-        $.getJSON(urlJsonAndamentoRegioni, function (data) {
+        $.getJSON(urlJsonAndamentoRegioni, (data) => {
 
             arrayDataRegioni = data;
             
@@ -213,7 +213,7 @@ $(function (e) {
     })
 
     //Sento il change sulla select del filtro e aggiorno i dati che uso per creare la pagina
-    $('#select_filtro').on('change', function() {
+    $('#select_filtro').on('change', function(){
         //Devo andare a prendere l'array di valori giusto, eventualmente filtrarlo per quella regione
         //e ricompilare la pagina
         if(this.value == 0){ //Sono nel caso dell'andamento nazionale
@@ -234,7 +234,7 @@ $(function (e) {
 
     //Funzione per cambiare il tipo di asse delle Y nei grafici di andamento cumulativo
     //  passo da logaritmico a lineare
-    $(document).on("click", "button.btn_change_scala_grafico" , function() {
+    $(document).on("click", "button.btn_change_scala_grafico" , function(){
 
         if(!$(this).hasClass('is-light')){ //Il bottone è già attivo e io lo sto premendo di nuovo
             return;
