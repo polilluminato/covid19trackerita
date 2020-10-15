@@ -48,7 +48,7 @@ $(function (e) {
                         $(`[data-i18n="${key}"]`).text(objTraduzioni[key])
                         return;
                     } else {
-                        console.log(key)
+                        //console.log(key)
                     }
                 }
             });
@@ -291,7 +291,7 @@ $(function (e) {
         }
 
         let newPrefLang = $(this).data('lang');
-        console.log(newPrefLang);
+        //console.log(newPrefLang);
         prefLang = newPrefLang; //Setto la nuova lingua
         //Aggiorno le traduzioni
         updateTraduzioniPage();
