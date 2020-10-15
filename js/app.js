@@ -190,6 +190,9 @@ $(function (e) {
             $("#numero_deceduti").text(ultimoGiorno.deceduti);
                 $("#variazione_numero_deceduti").text(calcolaVariazioneGiorniConsecutivi(ultimoGiorno,penultimoGiorno,"deceduti"));
                 $("#percentuale_deceduti_sul_totale").text(calcolaPercentuale(ultimoGiorno.deceduti,ultimoGiorno.totale_casi)+"%");
+            $("#numero_terapia_intensiva").text(ultimoGiorno.terapia_intensiva);
+                $("#variazione_numero_terapia_intensiva").text(calcolaVariazioneGiorniConsecutivi(ultimoGiorno,penultimoGiorno,"terapia_intensiva"));
+                $("#percentuale_terapia_intensiva_sul_totale").text(calcolaPercentuale(ultimoGiorno.terapia_intensiva,ultimoGiorno.totale_casi)+"%");
 
         let objValori = getValoriFormattati(arrayDati);
         creaGrafici(objValori);
