@@ -17,10 +17,10 @@ $(function (e) {
 
     //Nomi dei valori che vengono messi a disposizionne dal file JSON della protezione civile
     var tutteStats = [
-        { key: "totale_casi", titolo: "c19ti_totale_casi", color: "#FFDD57", backgroundColor: "#fff3c3"}, 
-        { key: "dimessi_guariti", titolo: "c19ti_dimessi_guariti", color: "#48C774", backgroundColor: "#cbffde"},
-        { key: "deceduti", titolo:"c19ti_deceduti", color: "#F14668", backgroundColor: "#ffb9c6"},
-        { key: "terapia_intensiva", titolo:"c19ti_terapia_intensiva", color: "#0066CC", backgroundColor: "#cce1ff"},
+        { key: "totale_casi", titolo: "c19ti_totale_casi", color: "#FFDD57", backgroundColor: "#3b3726"}, 
+        { key: "dimessi_guariti", titolo: "c19ti_dimessi_guariti", color: "#48C774", backgroundColor: "#2e4335"},
+        { key: "deceduti", titolo:"c19ti_deceduti", color: "#F14668", backgroundColor: "#5b373e"},
+        { key: "terapia_intensiva", titolo:"c19ti_terapia_intensiva", color: "#0066CC", backgroundColor: "#2f4051"},
         //{ key: "totale_attualmente_positivi", titolo:"Totale Attualmente Positivi"},
         //{ key: "nuovi_attualmente_positivi", titolo:"Nuovi Attualmente Positivi"},
         //{ key: "ricoverati_con_sintomi", titolo:"Ricoverati con sintomi"},
