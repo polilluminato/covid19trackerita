@@ -103,27 +103,29 @@ $(function (e) {
         //Creo tutti i div che conterranno i grafici
         tutteStats.forEach((singolaStat,index) => {
             document.getElementById("sezione_grafici").innerHTML += 
-                `<div class="columns is-multiline singola_sezione">
-                    <div class="column is-full">
-                        <p class="title is-4" data-i18n="${singolaStat.titolo}"></p>
-                    </div>
-                    <div class="column is-half">
-                        <div class="titolo">
-                            <p class="title is-5" data-i18n="c19ti_andamento_cumulativo"></p>
-                            <div class="sezione_bottoni">
-                                <button class="button is-small bottone btn_change_scala_grafico is-info is-light" 
-                                    data-progressivo="${index*2}" data-tipo="logarithmic">LOG</button>
-                                <button class="button is-small bottone btn_change_scala_grafico is-info" 
-                                    data-progressivo="${index*2}" data-tipo="linear">LIN</button>
+                `<div class="column is-one-quarter">
+                    <div class="columns is-multiline">
+                        <div class="column is-12">
+                            <p class="title is-4 title-sezione-grafico" data-i18n="${singolaStat.titolo}"></p>
+                        </div>
+                        <div class="column is-12">
+                            <div class="titolo">
+                                <p class="title is-5" data-i18n="c19ti_valori_singoli_giornalieri"></p>
                             </div>
+                            <canvas id="chart-${singolaStat.key}_giornaliero"></canvas>
                         </div>
-                        <canvas id="chart-${singolaStat.key}_cumulativo"></canvas>
-                    </div>
-                    <div class="column is-half">
-                        <div class="titolo">
-                            <p class="title is-5" data-i18n="c19ti_valori_singoli_giornalieri"></p>
+                        <div class="column is-12">
+                            <div class="titolo">
+                                <p class="title is-5" data-i18n="c19ti_andamento_cumulativo"></p>
+                                <div class="sezione_bottoni">
+                                    <button class="button is-small bottone btn_change_scala_grafico is-info is-light" 
+                                        data-progressivo="${index*2}" data-tipo="logarithmic">LOG</button>
+                                    <button class="button is-small bottone btn_change_scala_grafico is-info" 
+                                        data-progressivo="${index*2}" data-tipo="linear">LIN</button>
+                                </div>
+                            </div>
+                            <canvas id="chart-${singolaStat.key}_cumulativo"></canvas>
                         </div>
-                        <canvas id="chart-${singolaStat.key}_giornaliero"></canvas>
                     </div>
                 </div>`;
         });
