@@ -65,7 +65,7 @@ $(function (e) {
         //Creo i singoli array giornaliero e cumulativo per ogni statistica
         tutteStats.forEach(singolaStat => {
             obj[singolaStat.key + "_giornaliero"] = [];
-            obj[singolaStat.key + "_cumulativo"] = [];
+            //obj[singolaStat.key + "_cumulativo"] = [];
         });
 
         for (let i = 0; i < allStats.length; i++) {
@@ -80,7 +80,7 @@ $(function (e) {
             tutteStats.forEach(singolaStat => {
 
                 //Aggiungo i [statistica]_cumulativo
-                obj[singolaStat.key + "_cumulativo"].push(single[singolaStat.key]);
+                //obj[singolaStat.key + "_cumulativo"].push(single[singolaStat.key]);
 
                 //Aggiungo i [statistica]_giornaliero
                 if (i == 0) {
@@ -103,7 +103,7 @@ $(function (e) {
         //Creo tutti i div che conterranno i grafici
         tutteStats.forEach((singolaStat,index) => {
             document.getElementById("sezione_grafici").innerHTML += 
-                `<div class="column is-one-quarter">
+                `<div class="column is-6">
                     <div class="columns is-multiline">
                         <div class="column is-12">
                             <p class="title is-4 title-sezione-grafico" data-i18n="${singolaStat.titolo}"></p>
@@ -114,20 +114,23 @@ $(function (e) {
                             </div>
                             <canvas id="chart-${singolaStat.key}_giornaliero"></canvas>
                         </div>
-                        <div class="column is-12">
-                            <div class="titolo">
-                                <p class="title is-5" data-i18n="c19ti_andamento_cumulativo"></p>
-                                <div class="sezione_bottoni">
-                                    <button class="button is-small bottone btn_change_scala_grafico is-info is-light" 
-                                        data-progressivo="${index*2}" data-tipo="logarithmic">LOG</button>
-                                    <button class="button is-small bottone btn_change_scala_grafico is-info" 
-                                        data-progressivo="${index*2}" data-tipo="linear">LIN</button>
-                                </div>
-                            </div>
-                            <canvas id="chart-${singolaStat.key}_cumulativo"></canvas>
-                        </div>
                     </div>
                 </div>`;
+
+                /*
+                    <div class="column is-12">
+                        <div class="titolo">
+                            <p class="title is-5" data-i18n="c19ti_andamento_cumulativo"></p>
+                            <div class="sezione_bottoni">
+                                <button class="button is-small bottone btn_change_scala_grafico is-info is-light" 
+                                    data-progressivo="${index*2}" data-tipo="logarithmic">LOG</button>
+                                <button class="button is-small bottone btn_change_scala_grafico is-info" 
+                                    data-progressivo="${index*2}" data-tipo="linear">LIN</button>
+                            </div>
+                        </div>
+                        <canvas id="chart-${singolaStat.key}_cumulativo"></canvas>
+                    </div>
+                */
         });
 
         //Creo tutti i grafici
@@ -136,7 +139,7 @@ $(function (e) {
         tutteStats.forEach(singolaStat => {
 
             //Creo il grafico per la visualizzazione cumulativa
-            let graph1 = new Chart(document.getElementById(`chart-${singolaStat.key}_cumulativo`).getContext('2d'), {
+            /*let graph1 = new Chart(document.getElementById(`chart-${singolaStat.key}_cumulativo`).getContext('2d'), {
                 type: 'line',
                 data: {
                     labels: objValori.date,
@@ -148,7 +151,7 @@ $(function (e) {
                     }],
                 },
                 options: custom.options
-            });
+            });*/
             //Creo il grafico per la visualizzazione giornaliera
             let graph2 = new Chart(document.getElementById(`chart-${singolaStat.key}_giornaliero`).getContext('2d'), {
                 type: 'bar',
@@ -164,7 +167,8 @@ $(function (e) {
             });
 
             //Aggiunto i grafici all'array dei grafici per averne i riferimenti
-            arrayRefGrafici.push(graph1); arrayRefGrafici.push(graph2);
+            //arrayRefGrafici.push(graph1); 
+            arrayRefGrafici.push(graph2);
 
         });
     }
@@ -182,6 +186,7 @@ $(function (e) {
     function compilaPaginaConValoriGrafici(arrayDati){
         let ultimoGiorno = arrayDati[arrayDati.length - 1];
         let penultimoGiorno = arrayDati[arrayDati.length - 2];
+        let terzultimoGiorno = arrayDati[arrayDati.length - 3];
                 //Setto i valori singoli
             $("#data_aggiornamento").text(dayjs(ultimoGiorno.data).format("DD/MM/YYYY @HH:mm"));
             $("#numero_totale").text(ultimoGiorno.totale_casi);
@@ -267,6 +272,7 @@ $(function (e) {
         }
     });
 
+    /*
     //Funzione per cambiare il tipo di asse delle Y nei grafici di andamento cumulativo
     //  passo da logaritmico a lineare
     $(document).on("click", "button.btn_change_scala_grafico" , function(){
@@ -285,6 +291,7 @@ $(function (e) {
         //Cambio il colore ai bottoni (faccio lo switch tra i due)
         $("button.btn_change_scala_grafico[data-progressivo='" + progressivo +"']").toggleClass('is-light');
     });
+    */
 
     //Funzione che sente il click per il cambio di lingua
     $('.btn-lingua').click(function(){
