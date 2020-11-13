@@ -2,7 +2,7 @@
 
 html, body {
     font-family: 'Raleway', sans-serif;
-    background-color: #1f1f1f;
+    background-color: #25282d;
     color: #eeeeee;
 }
 .title,.subtitle {
@@ -47,22 +47,22 @@ html, body {
 }
 
 .singola_sezione {
-    background-color: #232323;
+    background-color: #2f3438;
     margin-top: 2.5rem;
     padding: 1rem .5rem 2rem .5rem;
     box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
 }
 .card {
-    background-color: #232323;
+    background-color: #2f3438;
 }
 .input, .select select, .textarea {
-    background-color: #232323;
+    background-color: #2f3438;
     border-color: #3273dc;
     border-radius: 4px;
     color: #eeeeee;
 }
 .footer {
-    background-color: #1f1f1f;
+    background-color: #25282d;
     margin-top: 2rem;
     padding-bottom: 2rem;
 }
