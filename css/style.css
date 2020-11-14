@@ -1,69 +1,66 @@
-@font-face{font-family:Raleway;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v18/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaooCP.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v18/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVsEpYCP.ttf) format('truetype')}
-
 html, body {
-    font-family: 'Raleway', sans-serif;
-    background-color: #25282d;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #1e2125;
     color: #eeeeee;
 }
 .title,.subtitle {
     color: #eeeeee;
 }
-.colonna_titolo {
-    padding-top: 1.5rem;
+.title {
+    letter-spacing: 1.5px;
 }
 .col-switch-lingua {
     display: flex;
     flex-direction: row;
 }
-.col-lingua {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.col-switch-lingua .btn-lingua:last-child {
+    margin-left: 10px;
 }
-.col-lingua .btn-lingua {
+.btn-lingua {
     display: flex;
     flex-direction: row;
     cursor: pointer;
     align-items: center;
     margin-right: 20px;
-    border: 1px solid #acacac;
+    border: 1px solid #353248;
     padding: 5px 10px;
     border-radius: 5px;
+    background-color: #1e2125;
+    color: #dddddd;
 }
-.col-lingua .btn-lingua img {
+.btn-lingua img {
     width: 25px;
     height: 25px;
     margin-right: 10px;
 }
-.col-lingua .btn-lingua span {
+.btn-lingua span {
     font-size: 20px;
 }
-.col-lingua .btn-lingua.active {
-    background-color: #08f;
+.btn-lingua.active {
+    background-color: #004888;
 }
-.col-lingua .btn-lingua.active span{
+.btn-lingua.active span{
     font-weight: 600;
     color: #fff;
 }
 
 .singola_sezione {
-    background-color: #2f3438;
+    background-color: #272b2e;
     margin-top: 2.5rem;
     padding: 1rem .5rem 2rem .5rem;
     box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
 }
 .card {
-    background-color: #2f3438;
+    background-color: #272b2e;
 }
 .input, .select select, .textarea {
-    background-color: #2f3438;
+    background-color: #272b2e;
     border-color: #3273dc;
     border-radius: 4px;
     color: #eeeeee;
 }
 .footer {
-    background-color: #25282d;
-    margin-top: 2rem;
+    background-color: #1e2125;
     padding-bottom: 2rem;
 }
 
@@ -99,9 +96,6 @@ html, body {
 }
 .singola_sezione .titolo p{
     margin-bottom: 0;
-}
-.singola_sezione .titolo .immaginetta_download {
-    margin-right: 10px;
 }
 .singola_sezione .titolo .sezione_bottoni {
     display: flex;
