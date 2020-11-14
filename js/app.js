@@ -114,13 +114,13 @@ $(function (e) {
                             </div>
                             <canvas id="chart-${singolaStat.key}_giornaliero"></canvas>
                         </div>
-                        <div class="column is-12">
+                        <div class="column is-12 mt-5">
                             <div class="titolo">
                                 <p class="title is-5" data-i18n="c19ti_andamento_cumulativo"></p>
                                 <div class="sezione_bottoni">
-                                    <button class="button is-small bottone btn_change_scala_grafico is-info is-light" 
+                                    <button class="button is-small bottone btn_change_scala_grafico is-dark" 
                                         data-progressivo="${index*2}" data-tipo="logarithmic">LOG</button>
-                                    <button class="button is-small bottone btn_change_scala_grafico is-info" 
+                                    <button class="button is-small bottone btn_change_scala_grafico" 
                                         data-progressivo="${index*2}" data-tipo="linear">LIN</button>
                                 </div>
                             </div>
@@ -271,7 +271,7 @@ $(function (e) {
     //  passo da logaritmico a lineare
     $(document).on("click", "button.btn_change_scala_grafico" , function(){
 
-        if(!$(this).hasClass('is-light')){ //Il bottone è già attivo e io lo sto premendo di nuovo
+        if(!$(this).hasClass('is-dark')){ //Il bottone è già attivo e io lo sto premendo di nuovo
             return;
         }
 
@@ -283,7 +283,7 @@ $(function (e) {
         arrayRefGrafici[progressivo].update();
 
         //Cambio il colore ai bottoni (faccio lo switch tra i due)
-        $("button.btn_change_scala_grafico[data-progressivo='" + progressivo +"']").toggleClass('is-light');
+        $("button.btn_change_scala_grafico[data-progressivo='" + progressivo +"']").toggleClass('is-dark');
     });
 
     //Funzione che sente il click per il cambio di lingua
@@ -293,7 +293,7 @@ $(function (e) {
         }
 
         let newPrefLang = $(this).data('lang');
-        //console.log(newPrefLang);
+        console.log(newPrefLang);
         prefLang = newPrefLang; //Setto la nuova lingua
         //Aggiorno le traduzioni
         updateTraduzioniPage();
@@ -302,6 +302,13 @@ $(function (e) {
         $(this).closest('.col-switch-lingua').find('.active').removeClass('active');
         $(this).addClass('active');
 
+    });
+
+    // Check for click events on the navbar burger icon
+    $(".navbar-burger").click(function() {
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        $(".navbar-burger").toggleClass("is-active");
+        $(".navbar-menu").toggleClass("is-active");
     });
 
 })
