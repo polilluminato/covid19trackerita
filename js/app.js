@@ -103,18 +103,18 @@ $(function (e) {
         //Creo tutti i div che conterranno i grafici
         tutteStats.forEach((singolaStat,index) => {
             document.getElementById("sezione_grafici").innerHTML += 
-                `<div class="column is-one-quarter">
+                `<div class="column is-12">
                     <div class="columns is-multiline">
                         <div class="column is-12">
-                            <p class="title is-4 title-sezione-grafico" data-i18n="${singolaStat.titolo}"></p>
+                            <p class="title is-12 title-sezione-grafico" data-i18n="${singolaStat.titolo}"></p>
                         </div>
-                        <div class="column is-12">
+                        <div class="column is-6">
                             <div class="titolo">
                                 <p class="title is-5" data-i18n="c19ti_valori_singoli_giornalieri"></p>
                             </div>
                             <canvas id="chart-${singolaStat.key}_giornaliero"></canvas>
                         </div>
-                        <div class="column is-12 mt-5">
+                        <div class="column is-6">
                             <div class="titolo">
                                 <p class="title is-5" data-i18n="c19ti_andamento_cumulativo"></p>
                                 <div class="sezione_bottoni">

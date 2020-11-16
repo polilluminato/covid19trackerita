@@ -1,6 +1,6 @@
 html, body {
     font-family: 'Ubuntu', sans-serif;
-    background-color: #1e2125;
+    background-color: #121212;
     color: #eeeeee;
 }
 .title,.subtitle {
@@ -22,10 +22,10 @@ html, body {
     cursor: pointer;
     align-items: center;
     margin-right: 20px;
-    border: 1px solid #353248;
+    border: 1px solid #1f1f1f;
     padding: 5px 10px;
     border-radius: 5px;
-    background-color: #1e2125;
+    background-color: #121212;
     color: #dddddd;
 }
 .btn-lingua img {
@@ -45,22 +45,22 @@ html, body {
 }
 
 .singola_sezione {
-    background-color: #272b2e;
-    margin-top: 2.5rem;
+    background-color: #1f1f1f;
+    border-radius: .25rem;
     padding: 1rem .5rem 2rem .5rem;
     box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
 }
 .card {
-    background-color: #272b2e;
+    background-color: #1f1f1f;
 }
 .input, .select select, .textarea {
-    background-color: #272b2e;
+    background-color: #1f1f1f;
     border-color: #3273dc;
     border-radius: 4px;
     color: #eeeeee;
 }
 .footer {
-    background-color: #1e2125;
+    background-color: #121212;
     padding-bottom: 2rem;
 }
 
@@ -76,12 +76,27 @@ html, body {
 }
 .statistica_singola {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
     color: #292929;
 }
-.statistica_singola p {
-    padding-left: 1rem;
+.statistica_singola p.title, 
+    .statistica_singola p.subtitle {
+    padding-left: .5rem;
+    color: #292929;
+}
+.statistica_singola p.title {
+    margin-bottom: 1.5em;
+}
+.statistica_singola p.subtitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.statistica_singola p.subtitle svg {
+    font-size: 1.3em;
+}
+.statistica_singola p.subtitle span {
+    margin-left: 10px;
 }
 .statistica_singola p span.grassetto{
     font-weight: bold;
@@ -110,6 +125,38 @@ html, body {
 }
 /*Sezione per i grafici*/
 
+/*Sidebar*/
+.sidebar .card:not(:first-child) {
+    margin-top: 1rem;
+}
+.card-footer {
+    border-top: 1px solid #444;
+}
+.card-footer-item:not(:last-child) {
+    border-right: 1px solid #444;
+}
+.sidebar .card .numero_pubblica_utilita,
+    .sidebar .card .numero_pubblica_utilita:hover {
+    font-size: 5em;
+    text-decoration: none;
+}
+.card.immuni {
+    color: #eeeeee;
+}
+.sidebar .card a {
+    cursor: pointer;
+    color: #3273dc;
+}
+.sidebar .card a:hover {
+    text-decoration: underline;
+}
+.sidebar .card .card-content {
+    color: #eee;
+}
+.sidebar .card .card-content ul li {
+    font-size: 20px;
+}
+/*Sidebar*/
 
 @media only screen and (max-width: 768px) {
     .title-sezione-grafico {
