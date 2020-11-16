@@ -103,18 +103,18 @@ $(function (e) {
         //Creo tutti i div che conterranno i grafici
         tutteStats.forEach((singolaStat,index) => {
             document.getElementById("sezione_grafici").innerHTML += 
-                `<div class="column is-one-quarter">
+                `<div class="column is-12">
                     <div class="columns is-multiline">
                         <div class="column is-12">
-                            <p class="title is-4 title-sezione-grafico" data-i18n="${singolaStat.titolo}"></p>
+                            <p class="title is-12 title-sezione-grafico" data-i18n="${singolaStat.titolo}"></p>
                         </div>
-                        <div class="column is-12">
+                        <div class="column is-6">
                             <div class="titolo">
                                 <p class="title is-5" data-i18n="c19ti_valori_singoli_giornalieri"></p>
                             </div>
                             <canvas id="chart-${singolaStat.key}_giornaliero"></canvas>
                         </div>
-                        <div class="column is-12 mt-5">
+                        <div class="column is-6">
                             <div class="titolo">
                                 <p class="title is-5" data-i18n="c19ti_andamento_cumulativo"></p>
                                 <div class="sezione_bottoni">
@@ -169,9 +169,9 @@ $(function (e) {
         });
     }
 
-    function calcolaPercentuale(valore,totale){
+    /*function calcolaPercentuale(valore,totale){
         return ((parseInt(valore)/parseInt(totale))*100).toFixed(2);
-    }
+    }*/
 
     //Funzione per calcolare la variazione di una determinata chiave tra due giorni
     function calcolaVariazioneGiorniConsecutivi(dayOggi,dayIeri,chiave){
@@ -188,13 +188,13 @@ $(function (e) {
                 $("#variazione_numero_totale").text(calcolaVariazioneGiorniConsecutivi(ultimoGiorno,penultimoGiorno,"totale_casi"));
             $("#numero_guariti").text(ultimoGiorno.dimessi_guariti);
                 $("#variazione_numero_guariti").text(calcolaVariazioneGiorniConsecutivi(ultimoGiorno,penultimoGiorno,"dimessi_guariti"));
-                $("#percentuale_guariti_sul_totale").text(calcolaPercentuale(ultimoGiorno.dimessi_guariti,ultimoGiorno.totale_casi)+"%");
+                //$("#percentuale_guariti_sul_totale").text(calcolaPercentuale(ultimoGiorno.dimessi_guariti,ultimoGiorno.totale_casi)+"%");
             $("#numero_deceduti").text(ultimoGiorno.deceduti);
                 $("#variazione_numero_deceduti").text(calcolaVariazioneGiorniConsecutivi(ultimoGiorno,penultimoGiorno,"deceduti"));
-                $("#percentuale_deceduti_sul_totale").text(calcolaPercentuale(ultimoGiorno.deceduti,ultimoGiorno.totale_casi)+"%");
+                //$("#percentuale_deceduti_sul_totale").text(calcolaPercentuale(ultimoGiorno.deceduti,ultimoGiorno.totale_casi)+"%");
             $("#numero_terapia_intensiva").text(ultimoGiorno.terapia_intensiva);
                 $("#variazione_numero_terapia_intensiva").text(calcolaVariazioneGiorniConsecutivi(ultimoGiorno,penultimoGiorno,"terapia_intensiva"));
-                $("#percentuale_terapia_intensiva_sul_totale").text(calcolaPercentuale(ultimoGiorno.terapia_intensiva,ultimoGiorno.totale_casi)+"%");
+                //$("#percentuale_terapia_intensiva_sul_totale").text(calcolaPercentuale(ultimoGiorno.terapia_intensiva,ultimoGiorno.totale_casi)+"%");
 
         let objValori = getValoriFormattati(arrayDati);
         creaGrafici(objValori);

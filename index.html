@@ -31,7 +31,7 @@
 
 <body>
 
-    <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #272b2e;">
+    <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #1f1f1f;">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://covid19trackerita.it">
             <img src="img/icona.png" width="32" height="32">
@@ -44,7 +44,7 @@
           </a>
         </div>
       
-        <div id="navbarBasicExample" class="navbar-menu" style="background-color: #272b2e;">
+        <div id="navbarBasicExample" class="navbar-menu" style="background-color: #1f1f1f;">
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons col-switch-lingua">
@@ -69,7 +69,7 @@
                     <h1 class="title is-1">COVID-19<br>Tracker ITA</h1>
                 </div>
                 <div class="column p-5">
-                    <h2 class="subtitle is-4" style="margin-bottom:.5rem;">
+                    <h2 class="subtitle is-5" style="margin-bottom:.5rem;">
                         <span data-i18n="c19ti_subtitle_p1"></span>
                         <span data-i18n="c19ti_subtitle_p2"></span>
                         <b id="data_aggiornamento"></b>
@@ -95,100 +95,137 @@
 
     <section class="mt-6">
         <div class="container is-fluid">
-            <div class="columns padre_colonne_riassunto">
-                <div class="column">
-                    <div class="card has-background-warning">
-                        <div class="card-content">
-                            <div class="statistica_singola">
-                                <i class="far fa-meh fa-3x"></i>
-                                <div>
-                                    <p>
-                                        <span data-i18n="c19ti_totale_casi"></span>
-                                        <span class="grassetto" id="numero_totale"></span>
-                                    </p>
-                                    <p>
-                                        <span class="grassetto" id="variazione_numero_totale"></span>
-                                        <span data-i18n="c19ti_variazione_ieri"></span>
-                                    </p>
-                                </div>
+            
+            <div class="columns">
 
+                <div class="column is-three-quarters">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="card has-background-warning">
+                                <div class="card-content">
+                                    <div class="statistica_singola">
+                                        <p class="title is-4">
+                                            <span class="grassetto" id="numero_totale"></span> (<span id="variazione_numero_totale"></span>)
+                                        </p>
+                                        <p class="subtitle is-4">
+                                            <i class="far fa-meh"></i><span data-i18n="c19ti_totale_casi"></span>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card has-background-success">
-                        <div class="card-content">
-                            <div class="statistica_singola">
-                                <i class="far fa-smile fa-3x"></i>
-                                <div>
-                                    <p>
-                                        <span data-i18n="c19ti_dimessi_guariti"></span> 
-                                        <span class="grassetto" id="numero_guariti"></span>
-                                    </p>
-                                    <p>
-                                        <span class="grassetto" id="variazione_numero_guariti"></span>
-                                        <span data-i18n="c19ti_variazione_ieri"></span>
-                                    </p>
-                                    <p>
-                                        <span class="grassetto" id="percentuale_guariti_sul_totale"></span>
-                                        <span data-i18n="c19ti_text_rispetto_totale"></span>
-                                    </p>
+                        <div class="column">
+                            <div class="card has-background-success">
+                                <div class="card-content">
+                                    <div class="statistica_singola">
+                                        <p class="title is-4">
+                                            <span class="grassetto" id="numero_guariti"></span> (<span id="variazione_numero_guariti"></span>)
+                                        </p>
+                                        <p class="subtitle is-4">
+                                            <i class="far fa-smile"></i><span data-i18n="c19ti_dimessi_guariti"></span> 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card has-background-danger">
+                                <div class="card-content">
+                                    <div class="statistica_singola">
+                                        <p class="title is-4">
+                                            <span class="grassetto" id="numero_deceduti"></span> (<span id="variazione_numero_deceduti"></span>)
+                                        </p>
+                                        <p class="subtitle is-4">
+                                            <i class="far fa-sad-tear"></i><span data-i18n="c19ti_deceduti"></span> 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card has-background-link">
+                                <div class="card-content">
+                                    <div class="statistica_singola">
+                                        <p class="title is-4">
+                                            <span class="grassetto" id="numero_terapia_intensiva"></span> (<span id="variazione_numero_terapia_intensiva"></span>)                                            </p>
+                                        <p class="subtitle is-4">
+                                            <i class="fas fa-virus"></i><span data-i18n="c19ti_terapia_intensiva"></span> 
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="columns is-multiline singola_sezione" id="sezione_grafici"></div>
                 </div>
-                <div class="column">
-                    <div class="card has-background-danger">
+
+                <div class="column sidebar">
+
+                    <div class="card">
                         <div class="card-content">
-                            <div class="statistica_singola">
-                                <i class="far fa-sad-tear fa-3x"></i>
-                                <div>
-                                    <p>
-                                        <span data-i18n="c19ti_deceduti"></span> 
-                                        <span class="grassetto" id="numero_deceduti"></span></p>
-                                    <p>
-                                        <span class="grassetto" id="variazione_numero_deceduti"></span>
-                                        <span data-i18n="c19ti_variazione_ieri"></span>
-                                    </p>
-                                    <p>
-                                        <span class="grassetto" id="percentuale_deceduti_sul_totale"></span>
-                                        <span data-i18n="c19ti_text_rispetto_totale"></span>
-                                    </p>
-                                </div>
-                            </div>
+                            <p class="title is-5 p-b-0">Numero di pubblica utilità</p>
+                            <a class="numero_pubblica_utilita" href="tel:1500"><i class="fas fa-phone-alt"></i> 1500</a>
                         </div>
                     </div>
-                </div>
-                <div class="column">
-                    <div class="card has-background-link">
+
+                    <div class="card">
                         <div class="card-content">
-                            <div class="statistica_singola">
-                                <i class="fas fa-virus fa-3x"></i>
-                                <div>
-                                    <p>
-                                        <span data-i18n="c19ti_terapia_intensiva"></span> 
-                                        <span class="grassetto" id="numero_terapia_intensiva"></span></p>
-                                    <p>
-                                        <span class="grassetto" id="variazione_numero_terapia_intensiva"></span>
-                                        <span data-i18n="c19ti_variazione_ieri"></span>
-                                    </p>
-                                    <p>
-                                        <span class="grassetto" id="percentuale_terapia_intensiva_sul_totale"></span>
-                                        <span data-i18n="c19ti_text_rispetto_totale"></span>
-                                    </p>
-                                </div>
-                            </div>
+                            <img src="http://www.salute.gov.it/imgs/C_17_materialiSocialNuovo_47_0_0_immagine.png"/>
                         </div>
                     </div>
+
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title is-5">Provvedimenti e domande</p>
+                            <ul>
+                                <li><a target="blank" href="http://www.governo.it/it/coronavirus-misure-del-governo">Coronavirus, le misure adottate dal Governo</a></li>
+                                <li><a target="blank" href="http://www.governo.it/it/iorestoacasa-misure-governo">Misure per il contenimento e gestione dell'emergenza epidemiologica</a></li>
+                                <li><a target="blank" href="http://www.governo.it/it/articolo/domande-frequenti-sulle-misure-adottate-dal-governo/15638#zone">Domande frequenti sulle misure adottate dal Governo</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title is-5">A chi rivolgersi</p>
+                            <ul>
+                                <li><a target="blank" href="http://www.salute.gov.it/portale/nuovocoronavirus/dettaglioContenutiNuovoCoronavirus.jsp?lingua=italiano&id=5342&area=nuovoCoronavirus&menu=aChiRivolgersi">Numero di pubblica utilità 1500 - Covid-19</a></li>
+                                <li><a target="blank" href="http://www.salute.gov.it/portale/nuovocoronavirus/dettaglioContenutiNuovoCoronavirus.jsp?lingua=italiano&id=5364&area=nuovoCoronavirus&menu=aChiRivolgersi">Covid-19 - Numeri verdi regionali</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title is-5">Link Utili</p>
+                            <ul>
+                                <li><a target="blank" href="http://www.governo.it/">Sito Governo Italiano</a></li>
+                                <li><a target="blank" href="http://www.salute.gov.it/portale/nuovocoronavirus/homeNuovoCoronavirus.jsp">Ministero della salute: Nuovo coronavirus</a></li>
+                                <li><a target="blank" href="http://www.governo.it/it/coronavirus">Governo Italiano: Coronavirus Covid-19</a></li>
+                                <li><a target="blank" href="http://www.protezionecivile.gov.it/attivita-rischi/rischio-sanitario/emergenze/coronavirus">Emergenza Coronavirus: la risposta nazionale</a></li>
+                                <li><a target="blank" href="https://www.iss.it/coronavirus">ISS per COVID-19</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card immuni">
+                        <div class="card-content">
+                            <a target="blank" href="https://www.immuni.italia.it/"><img src="img/logo-immuni.png"></a>
+                            Immuni è un'app creata per aiutarci a combattere l'epidemia di COVID-19. L'app utilizza la tecnologia per avvertire gli utenti che hanno avuto un'esposizione a rischio, anche se sono asintomatici.
+                        </div>
+                        <footer class="card-footer">
+                          <p class="card-footer-item">
+                            <a class="link_immuni" href="https://play.google.com/store/apps/details?id=it.ministerodellasalute.immuni">Download for Android</a>
+                          </p>
+                          <p class="card-footer-item">
+                            <a class="link_immuni" href="https://apps.apple.com/app/id1513940977">Download for iOS</a>
+                          </p>
+                        </footer>
+                    </div>
                 </div>
+
             </div>
         </div>
-    </section>
-
-    <section>
-        <div class="container is-fluid" ><div class="columns is-multiline singola_sezione" id="sezione_grafici"></div></div>
     </section>
 
     <footer class="footer">
