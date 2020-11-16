@@ -169,9 +169,9 @@ $(function (e) {
         });
     }
 
-    function calcolaPercentuale(valore,totale){
+    /*function calcolaPercentuale(valore,totale){
         return ((parseInt(valore)/parseInt(totale))*100).toFixed(2);
-    }
+    }*/
 
     //Funzione per calcolare la variazione di una determinata chiave tra due giorni
     function calcolaVariazioneGiorniConsecutivi(dayOggi,dayIeri,chiave){
@@ -188,13 +188,13 @@ $(function (e) {
                 $("#variazione_numero_totale").text(calcolaVariazioneGiorniConsecutivi(ultimoGiorno,penultimoGiorno,"totale_casi"));
             $("#numero_guariti").text(ultimoGiorno.dimessi_guariti);
                 $("#variazione_numero_guariti").text(calcolaVariazioneGiorniConsecutivi(ultimoGiorno,penultimoGiorno,"dimessi_guariti"));
-                $("#percentuale_guariti_sul_totale").text(calcolaPercentuale(ultimoGiorno.dimessi_guariti,ultimoGiorno.totale_casi)+"%");
+                //$("#percentuale_guariti_sul_totale").text(calcolaPercentuale(ultimoGiorno.dimessi_guariti,ultimoGiorno.totale_casi)+"%");
             $("#numero_deceduti").text(ultimoGiorno.deceduti);
                 $("#variazione_numero_deceduti").text(calcolaVariazioneGiorniConsecutivi(ultimoGiorno,penultimoGiorno,"deceduti"));
-                $("#percentuale_deceduti_sul_totale").text(calcolaPercentuale(ultimoGiorno.deceduti,ultimoGiorno.totale_casi)+"%");
+                //$("#percentuale_deceduti_sul_totale").text(calcolaPercentuale(ultimoGiorno.deceduti,ultimoGiorno.totale_casi)+"%");
             $("#numero_terapia_intensiva").text(ultimoGiorno.terapia_intensiva);
                 $("#variazione_numero_terapia_intensiva").text(calcolaVariazioneGiorniConsecutivi(ultimoGiorno,penultimoGiorno,"terapia_intensiva"));
-                $("#percentuale_terapia_intensiva_sul_totale").text(calcolaPercentuale(ultimoGiorno.terapia_intensiva,ultimoGiorno.totale_casi)+"%");
+                //$("#percentuale_terapia_intensiva_sul_totale").text(calcolaPercentuale(ultimoGiorno.terapia_intensiva,ultimoGiorno.totale_casi)+"%");
 
         let objValori = getValoriFormattati(arrayDati);
         creaGrafici(objValori);
