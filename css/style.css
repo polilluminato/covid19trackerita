@@ -136,14 +136,13 @@ html, body {
 .card-footer-item:not(:last-child) {
     border-right: 1px solid #444;
 }
-.sidebar .card .donwload_autocertificazione,
-    .sidebar .card .donwload_autocertificazione:hover {
-    font-size: 2.5em;
-    text-decoration: none;
-}
-.sidebar .card .numero_pubblica_utilita,
-    .sidebar .card .numero_pubblica_utilita:hover {
-    font-size: 2.5em;
+.sidebar .card .download_autocertificazione,
+    .sidebar .card .download_autocertificazione:hover,
+    .sidebar .card .numero_pubblica_utilita,
+    .sidebar .card .numero_pubblica_utilita:hover,
+    .sidebar .card .bollettino_giornaliero,
+    .sidebar .card .bollettino_giornaliero:hover {
+    font-size: 2em;
     text-decoration: none;
 }
 .card.immuni {
