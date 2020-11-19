@@ -46,12 +46,13 @@ html, body {
 
 .singola_sezione {
     background-color: #1f1f1f;
-    border-radius: .25rem;
+    border-radius: 1rem;
     padding: 1rem .5rem 2rem .5rem;
     box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
 }
 .card {
     background-color: #1f1f1f;
+    border-radius: 1rem;
 }
 .input, .select select, .textarea {
     background-color: #1f1f1f;
@@ -135,9 +136,14 @@ html, body {
 .card-footer-item:not(:last-child) {
     border-right: 1px solid #444;
 }
+.sidebar .card .donwload_autocertificazione,
+    .sidebar .card .donwload_autocertificazione:hover {
+    font-size: 2.5em;
+    text-decoration: none;
+}
 .sidebar .card .numero_pubblica_utilita,
     .sidebar .card .numero_pubblica_utilita:hover {
-    font-size: 5em;
+    font-size: 2.5em;
     text-decoration: none;
 }
 .card.immuni {
@@ -155,6 +161,11 @@ html, body {
 }
 .sidebar .card .card-content ul li {
     font-size: 20px;
+}
+.sidebar .card .card-content ul li:not(:last-child) {
+    border-bottom: #444 1px solid;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 /*Sidebar*/
 
