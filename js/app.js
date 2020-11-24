@@ -176,7 +176,7 @@ $(function (e) {
     //Funzione per calcolare la variazione di una determinata chiave tra due giorni
     function calcolaVariazioneGiorniConsecutivi(dayOggi,dayIeri,chiave){
         let valore = dayOggi[chiave]-dayIeri[chiave];
-        return ( valore >= 0 ? `+${valore}` : `-${valore}` );
+        return ( valore >= 0 ? `+${valore}` : `${valore}` );
     }
 
     function compilaPaginaConValoriGrafici(arrayDati){
